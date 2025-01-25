@@ -94,6 +94,8 @@ vim.opt.guicursor = {
 -- mappings {{{
 local k = vim.keymap
 
+k.set({ "n", "x" }, "<leader>Y", 'gg"+yG', { silent = true, desc = "Yank entire buffer to clipboard" })
+
 k.set({ "n", "v" }, "<leader>ca", function()
 	vim.lsp.buf.code_action({ apply = true })
 end, { desc = "Apply code action", buffer = true })
